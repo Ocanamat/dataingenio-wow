@@ -22,7 +22,7 @@ This is the source code for the dataIngenio website.
 
 ## License
 
-Copyright 2018-present ""Tama Francisquez"".
+Copyright 2018-present **Tama Francisquez**.
 
 Released under the [MIT](https://github.com/sourcethemes/academic-kickstart/blob/master/LICENSE.md) license.
 
