@@ -7,7 +7,7 @@
 
 appearance:
   theme_day: dataIngenio
-  theme_night: dataIngenio
+  #theme_night: dataIngenio
   font: my_font_set
   font_size: M
 
