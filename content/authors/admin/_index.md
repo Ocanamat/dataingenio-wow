@@ -1,15 +1,11 @@
 ---
 # Display name
-<<<<<<< HEAD
 title: Tama Francisquez
-=======
-title: Alice Bighetti 吳恩達
 
 # Full name (for SEO)
-first_name: Alice
-last_name: Bighetti
+first_name: Tama
+last_name: Francisquez
 
->>>>>>> 1d5363bdae4dd4242e2bb81c3a3a3dec532c52fe
 # Is this the primary user of the site?
 superuser: true
 
@@ -55,20 +51,13 @@ social:
     link: '/#contact'
   - icon: twitter
     icon_pack: fab
-<<<<<<< HEAD
     link: https://twitter.com/Ocanamat
-  #- icon: graduation-cap # Alternatively, use `google-scholar` #icon from `ai` icon pack
-  #  icon_pack: fas
-  #  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
-=======
-    link: https://twitter.com/GeorgeCushen
     label: Follow me on Twitter
     display:
       header: true
-  - icon: graduation-cap # Alternatively, use `google-scholar` icon from `ai` icon pack
-    icon_pack: fas
-    link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
->>>>>>> 1d5363bdae4dd4242e2bb81c3a3a3dec532c52fe
+  #- icon: graduation-cap # Alternatively, use `google-scholar` #icon from `ai` icon pack
+  #  icon_pack: fas
+  #  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
   - icon: github
     icon_pack: fab
     link: https://github.com/ocanamat
@@ -90,12 +79,6 @@ email: tamanaco.francisquez@gmail.com
 highlight_name: true
 ---
 
-<<<<<<< HEAD
 Hi! I am a physicist by training and if yo
-=======
-Alice Bighetti is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
->>>>>>> 1d5363bdae4dd4242e2bb81c3a3a3dec532c52fe
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/resume.pdf" "newtab" >}}resumé{{< /staticref >}}.

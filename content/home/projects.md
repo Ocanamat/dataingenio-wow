@@ -46,16 +46,12 @@ design:
   #   2 = Compact
   #   3 = Card
   #   Citation (4) For classic APA or MLA styled publication lists. Optionally, edit the value of citation_style in params.yaml to APA or MLA
+  #   4 = masonry
   #   5 = Showcase
-<<<<<<< HEAD
-  #   masonry
   view: masonry
-=======
-  view: showcase
->>>>>>> 1d5363bdae4dd4242e2bb81c3a3a3dec532c52fe
 
   # For Showcase view, flip alternate rows?
-  flip_alt_rows: false
+  flip_alt_rows: true
   spacing: 
     padding: ["20px", "0", "20px", "0"]
 ---
