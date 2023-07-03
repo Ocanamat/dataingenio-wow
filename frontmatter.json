@@ -3,8 +3,8 @@
   "frontMatter.taxonomy.contentTypes": [
     {
       "name": "default",
-      "pageBundle": false,
       "previewPath": null,
+      "pageBundle": true,
       "fields": [
         {
           "title": "Title",
@@ -24,7 +24,7 @@
           "isPublishDate": true
         },
         {
-          "title": "Content preview",
+          "title": "Article preview",
           "name": "preview",
           "type": "image"
         },
@@ -42,6 +42,100 @@
           "title": "Categories",
           "name": "categories",
           "type": "categories"
+        },
+        {
+          "title": "Subtitle",
+          "name": "subtitle",
+          "type": "string"
+        },
+        {
+          "title": "Summary",
+          "name": "summary",
+          "type": "string"
+        },
+        {
+          "title": "Feedback",
+          "name": "feedback",
+          "type": "boolean"
+        },
+        {
+          "title": "Authors",
+          "name": "authors",
+          "type": "string"
+        },
+        {
+          "title": "Authors_notes",
+          "name": "authors_notes",
+          "type": "string"
+        },
+        {
+          "title": "Show Date?",
+          "name": "show_date",
+          "type": "boolean"
+        },
+        {
+          "title": "Show Reading Time?",
+          "name": "reading_time",
+          "type": "boolean"
+        },
+        {
+          "title": "Enable Share?",
+          "name": "share",
+          "type": "boolean"
+        },
+        {
+          "title": "Show Author Profile?",
+          "name": "profile",
+          "type": "boolean"
+        },
+        {
+          "title": "Is Commentable?",
+          "name": "commentable",
+          "type": "boolean"
+        },
+        {
+          "title": "Is Editable?",
+          "name": "editable",
+          "type": "boolean"
+        },
+        {
+          "title": "Show link to next article",
+          "name": "pager",
+          "type": "boolean"
+        },
+        {
+          "title": "Show recommended?",
+          "name": "show_related",
+          "type": "boolean"
+        },
+        {
+          "title": "Show breadcrumb nav?",
+          "name": "show_breadcrumb",
+          "type": "boolean"
+        },
+        {
+          "title": "header",
+          "name": "header",
+          "type": "fields",
+          "fields": [
+            {
+              "title": "navbar",
+              "name": "navbar",
+              "type": "fields",
+              "fields": [
+                {
+                  "title": "enable",
+                  "name": "enable",
+                  "type": "boolean"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "lastmod",
+          "name": "lastmod",
+          "type": "datetime"
         }
       ]
     }
@@ -50,16 +144,36 @@
     {
       "title": "Pages",
       "path": "[[workspace]]/content",
+      "excludeSubdir": true
+    },
+    {
+      "path": "[[workspace]]/content/post",
+      "title": "Blog posts",
+      "excludeSubdir": false
+    },
+    {
+      "path": "[[workspace]]/content/authors",
+      "title": "Authors",
+      "excludeSubdir": false
+    },
+    {
+      "title": "Projects",
+      "path": "[[workspace]]/content/project",
+      "excludeSubdir": false
+    },
+    {
+      "title": "Publications",
+      "path": "[[workspace]]/content/publication",
       "excludeSubdir": false
     }
   ],
   "frontMatter.framework.startCommand": "hugo server -D",
   "frontMatter.preview.host": "http://localhost:1313",
   "frontMatter.taxonomy.tags": [
-    "Academic",
     "Deep Learning"
   ],
-  "frontMatter.taxonomy.categories": [
-    "Demo"
-  ]
+  "frontMatter.taxonomy.categories": [],
+  "frontMatter.content.fmHighlight": true,
+  "frontMatter.framework.id": "hugo",
+  "frontMatter.content.publicFolder": "static"
 }

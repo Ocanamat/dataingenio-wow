@@ -1,0 +1,87 @@
+---
+title: Measure of Clustering in a 2D Point Distribution
+author: Tama Francisquez
+date: '2020-10-22'
+slug: measure-of-clustering-in-a-2d-point-distribution
+categories: []
+tags: 
+  - Shiny
+  - demographics
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-10-22T18:57:26+02:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+draft: false
+projects: []
+runtime: shiny
+---
+
+```{r echo=T, results = 'hide', message=FALSE}
+library(cluster)
+library(spatstat)
+library(clustertend)
+library(dplyr)
+library(ggplot2)
+```
+
+<!--
+Notebook
+https://www.notion.so/Measure-of-Clustering-in-a-2D-Point-Pattern-4ada30c60d04429994da40265fe73f51
+-->
+
+# Why? and hy not? or yes 
+Measuring and qualifying a population and its features is essential in its study for ecology, demography, economics or the social sciences. When talking about populations the most common terms handled around are its size, density, composition (genre, religion, age, etc) and urbanization, and these qualities are usually measured as totals, percentages and their changes with time. However, there is a quality of a population that is seldom spoken about: its dispersion in space. 
+
+We all have a qualitative intuition about population dispersion: it is directly related to population density and urbanization level, yet density and urbanization are often represented directly as densities on maps. If we would like to measure, with a single value, the aggregation or dispersion of a population, we would have to apply varying statistical measures on these quantities with varying degrees of precision and information condensation power, with all statistics being susceptible to one or another feature of the population distribution. 
+
+In essence, how do we quantify, in one metric, the dispersion (or aggregation) of a population in the space it occupies?
+
+# Precedence
+How disperse a population is neither a new question nor unknown: it has, however, diverse measurement methods with no consensus on a common measure.
+
+For the sake of comparison of the different measures, first consider the following sample populations: a regularly distributed population, a randomly distributed population and a population with a clustered distribution.
+
+
+```{r}
+# Regular Distribution
+size <- 20
+x <- rep(seq(from = 0, to = 1, length.out = size), 20)
+y <- rep(seq(from = 0, to = 1, length.out = size), each = 20)
+df <- data.frame(x, y)
+plot(df)
+
+# Random Distribution
+x <- matrix(runif(200, 1, 100), 50, 2)
+plot(x)
+
+## Clustered Distribution
+nclust <- function(x0, y0, radius, n) {
+  return(runifdisc(n, radius, centre = c(x0, y0)))
+}
+data <- as.data.frame.ppp(rPoissonCluster(20, 0.1, nclust, radius = 0.1, n = 5))
+plot(data)
+```
+
+It is easy just by inspecting these graphs to identify the quality of the population distribution we are trying to measure: a clustered sample population looks remarkably different than a regular distributed population, and upon a closer inspection, somewhat different than a random too.
+
+<!--
+  // TODO: Review SpatStat dispersion fucntions 
+-->
+
+# How?
+Possible measures
+
+
+
+
+
+
+
+```
+<iframe height="800" width="100%" frameborder="no" src="https://antoinesoetewey.shinyapps.io/statistics-201/"> </iframe>
+```

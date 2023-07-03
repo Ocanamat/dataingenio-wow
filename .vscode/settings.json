@@ -1,5 +1,27 @@
 {
+    "[markdown]": {
+        "editor.fontSize": 14,
+        "editor.lineHeight": 22,
+        "editor.lineNumbers": "on",
+        "editor.minimap.enabled": true,
+        "editor.quickSuggestions": {
+            "comments": "off",
+            "other": "off",
+            "strings": "off"
+        },
+        "editor.wordWrap": "bounded",
+        "editor.wordWrapColumn": 90
+    },
+    "frontMatter.content.autoUpdateDate": true,
+    "frontMatter.content.draftField": {
+        "name": "draft",
+        "type": "boolean"
+    },
+    "frontMatter.content.fmHighlight": true,
+    "frontMatter.dashboard.openOnStart": true,
+    "frontMatter.site.baseURL": "www.dataingenio.com",
     "workbench.colorCustomizations": {
+        "activityBar.background": "#2b2b2b",
         "statusBar.background": "#262524",
         "statusBar.debuggingBackground": "#007acc",
         "statusBar.debuggingForeground": "#dddddd",
@@ -24,22 +46,7 @@
         "terminal.foreground": "#f2f2f2",
         "terminalCursor.background": "#ffffff",
         "terminalCursor.foreground": "#ffffff",
-        "activityBar.background": "#2b2b2b",
         "titleBar.activeBackground": "#121949",
         "titleBar.activeForeground": "#F5FCF3"
-    },
-    "frontMatter.content.fmHighlight": false,
-    "[markdown]": {
-        "editor.fontSize": 14,
-        "editor.lineHeight": 26,
-        "editor.wordWrap": "wordWrapColumn",
-        "editor.wordWrapColumn": 64,
-        "editor.lineNumbers": "off",
-        "editor.quickSuggestions": {
-            "comments": "off",
-            "strings": "off",
-            "other": "off"
-        },
-        "editor.minimap.enabled": false
     }
 }

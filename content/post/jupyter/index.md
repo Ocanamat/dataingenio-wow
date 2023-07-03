@@ -7,11 +7,13 @@ authors:
 tags: []
 categories: []
 projects: []
-date: '2019-02-05T00:00:00Z'
-lastMod: '2019-09-05T00:00:00Z'
+date: 2019-02-05T00:00:00Z
+lastMod: 2019-09-05T00:00:00Z
+draft: true
 image:
-  caption: ''
-  focal_point: ''
+  caption: ""
+  focal_point: ""
+lastmod: 2022-11-13T17:35:01.653Z
 ---
 
 ```python
@@ -74,4 +76,4 @@ jupyter nbconvert index.ipynb --to markdown --NbConvertApp.output_files_dir=.
 
 ## Example
 
-This post was created with Jupyter. The orginal files can be found at https://github.com/gcushen/hugo-academic/tree/master/exampleSite/content/post/jupyter
+This post was created with Jupyter. The orginal files can be found at <https://github.com/gcushen/hugo-academic/tree/master/exampleSite/content/post/jupyter>

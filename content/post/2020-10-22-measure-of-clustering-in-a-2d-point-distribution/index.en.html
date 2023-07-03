@@ -1,0 +1,98 @@
+---
+title: Measure of Clustering in a 2D Point Distribution
+author: Tama Francisquez
+date: '2020-10-22'
+slug: measure-of-clustering-in-a-2d-point-distribution
+categories: []
+tags: 
+  - Shiny
+  - demographics
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-10-22T18:57:26+02:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+draft: false
+projects: []
+runtime: shiny
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<pre class="r"><code>library(cluster)
+library(spatstat)</code></pre>
+<pre><code>## Loading required package: spatstat.data</code></pre>
+<pre><code>## Loading required package: nlme</code></pre>
+<pre><code>## Loading required package: rpart</code></pre>
+<pre><code>## 
+## spatstat 1.64-1       (nickname: &#39;Help you I can, yes!&#39;) 
+## For an introduction to spatstat, type &#39;beginner&#39;</code></pre>
+<pre><code>## 
+## Note: R version 4.0.2 (2020-06-22) is more than a year old; we strongly recommend upgrading to the latest version</code></pre>
+<pre><code>## 
+## Attaching package: &#39;spatstat&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:cluster&#39;:
+## 
+##     volume</code></pre>
+<pre class="r"><code>library(clustertend)
+library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked _by_ &#39;.GlobalEnv&#39;:
+## 
+##     last, n</code></pre>
+<pre><code>## The following object is masked from &#39;package:nlme&#39;:
+## 
+##     collapse</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>library(ggplot2)</code></pre>
+<!--
+Notebook
+https://www.notion.so/Measure-of-Clustering-in-a-2D-Point-Pattern-4ada30c60d04429994da40265fe73f51
+-->
+<div id="section-why" class="section level1">
+<h1>Why?</h1>
+<p>Measuring and qualifying a population and its features is essential in its study for ecology, demography, economics or the social sciences. When talking about populations the most common terms handled around are its size, density, composition (genre, religion, age, etc) and urbanization, and these qualities are usually measured as totals, percentages and their changes with time. However, there is a quality of a population that is seldom spoken about: its dispersion in space.</p>
+<p>We all have a qualitative intuition about population dispersion: it is directly related to population density and urbanization level, yet density and urbanization are often represented directly as densities on maps. If we would like to measure, with a single value, the aggregation or dispersion of a population, we would have to apply varying statistical measures on these quantities with varying degrees of precision and information condensation power, with all statistics being susceptible to one or another feature of the population distribution.</p>
+<p>In essence, how do we quantify, in one metric, the dispersion (or aggregation) of a population in the space it occupies?</p>
+</div>
+<div id="section-precedence" class="section level1">
+<h1>Precedence</h1>
+<p>How disperse a population is neither a new question nor unknown: it has, however, diverse measurement methods with no consensus on a common measure.</p>
+<p>For the sake of comparison of the different measures, first consider the following sample populations: a regularly distributed population, a randomly distributed population and a population with a clustered distribution.</p>
+<pre class="r"><code># Regular Distribution
+size &lt;- 20
+x &lt;- rep(seq(from = 0, to = 1, length.out = size), 20)
+y &lt;- rep(seq(from = 0, to = 1, length.out = size), each = 20)
+df &lt;- data.frame(x, y)
+plot(df)</code></pre>
+<p><img src="/post/2020-10-22-measure-of-clustering-in-a-2d-point-distribution/index.en_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<pre class="r"><code># Random Distribution
+x &lt;- matrix(runif(200, 1, 100), 50, 2)
+plot(x)</code></pre>
+<p><img src="/post/2020-10-22-measure-of-clustering-in-a-2d-point-distribution/index.en_files/figure-html/unnamed-chunk-2-2.png" width="672" /></p>
+<pre class="r"><code>## Clustered Distribution
+nclust &lt;- function(x0, y0, radius, n) {
+  return(runifdisc(n, radius, centre = c(x0, y0)))
+}
+data &lt;- as.data.frame.ppp(rPoissonCluster(20, 0.1, nclust, radius = 0.1, n = 5))
+plot(data)</code></pre>
+<p><img src="/post/2020-10-22-measure-of-clustering-in-a-2d-point-distribution/index.en_files/figure-html/unnamed-chunk-2-3.png" width="672" /></p>
+<p>It is easy just by inspecting these graphs to identify the quality of the population distribution we are trying to measure: a clustered sample population looks remarkably different than a regular distributed population, and upon a closer inspection, somewhat different than a random too.</p>
+<!-- //Todo: Review SpatStat dispersion fucntions -->
+</div>
+<div id="section-how" class="section level1">
+<h1>How?</h1>
+<p>Possible measures</p>
+<pre><code>&lt;iframe height=&quot;800&quot; width=&quot;100%&quot; frameborder=&quot;no&quot; src=&quot;https://antoinesoetewey.shinyapps.io/statistics-201/&quot;&gt; &lt;/iframe&gt;</code></pre>
+</div>
